@@ -1,0 +1,33 @@
+.c-button {
+
+	// @include suffixcate {
+
+		&--primary[data-component*="global"] {
+
+			background-color: $color-secondary;
+			color: $color-secondary-contrast;
+			border-color: $color-secondary;
+
+			&:hover, &:focus, &:active {
+				background-color: $color-secondary-dark;
+				color: $color-secondary-dark-contrast;
+				border-color: $color-secondary-dark;
+			}
+
+			&[disabled], &[disabled]:hover, &[disabled]:focus, &[disabled]:active, &.-disabled {
+				background-color: #6A6B83 !important;
+				border-color: #6A6B83 !important;
+				text-shadow: 0 -0.0625rem 0 rgba(0, 0, 0, 0.05), 0 0.0625rem 0 rgba(255, 255, 255, 0.1) !important;
+
+				> span {
+					color: #44455d !important;
+				}
+
+			}
+		}
+
+	// }
+
+}
+
+

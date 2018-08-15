@@ -1,0 +1,73 @@
+.c-toggle {
+	&__content {
+		display: none;
+	}
+
+	&__btn {
+		cursor: pointer;
+		border: 0;
+		-webkit-appearance: none;
+		box-shadow: none;
+		outline: none;
+		display: inline-block;
+		background: transparent;
+		font-size: 1rem;
+		padding: 0;
+		margin: 0;
+		text-align: left;
+		font-family: inherit;
+		position: relative;
+		padding-right: rem(40);
+
+
+		&:after {
+			@include glyph;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: rem(10);
+			border: 1px solid;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: rem(20);
+			height: rem(20);
+			border-radius: 100%;
+		}
+
+		&:hover, &:active, &:focus {
+			&:after {
+			}
+		}
+
+		&[aria-expanded="true"] {
+
+			&:after {
+				content: "x";
+
+			}
+
+			& + .c-toggle__content {
+				display: block;
+			}
+		}
+	}
+}
+
+
+.c-toggle {
+	&__btn {
+		&:after {
+			color: $color-accent;
+		}
+
+		&:hover, &:active, &:focus {
+			&:after {
+				background-color: $color-accent-accent;
+				border-color: $color-accent;
+				color: $color-accent-accent-contrast;
+			}
+		}
+	}
+}
